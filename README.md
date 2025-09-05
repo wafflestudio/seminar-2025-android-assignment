@@ -23,5 +23,5 @@
 ### PR 날리기
 - 본 레포지토리를 Fork한 후, assignment-0 브랜치를 파서 과제를 완료해 주세요.
 - 이후 your-repository/assignment-0 -> seminar-2025-android-assignment/main으로 PR을 날려 주세요.
-- 
+  
 - 넹

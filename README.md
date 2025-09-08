@@ -9,7 +9,7 @@
 
 ### 안드로이드 스튜디오 설치하기
 - 설치가 완료되어 Hello World!가 표시된 화면을 캡쳐해서 첨부해 주세요.
-![Hello World 화면] (image/capture.png)
+![Hello World 화면](image/capture.png)
 
 ### Kotlin과 친해지기
 - Kotlin 공식 문서를 읽고, 다른 언어에서 보지 못했던 문법이나 새로 알게 된 문법이 있다면 작성해 주세요.

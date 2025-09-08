@@ -19,7 +19,6 @@ import com.example.seminar_assignment_2025.ui.theme.Seminarassignment2025Theme
 class MainActivity: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
     }
 }

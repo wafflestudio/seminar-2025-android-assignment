@@ -12,7 +12,7 @@
         android:id="@+id/toolbar_profile"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIcon="@drawable/left_arrow_svgrepo_com"
         app:title="프로필" />
 
     <ScrollView
@@ -28,7 +28,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_profile_image" /> <TextView
+                android:src="@drawable/ic_slack_logo" />
+            <!-- 여기 slack logo 자기 얼굴로 수정 -->
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -79,7 +82,10 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_github_logo" /> <TextView
+                    android:src="@drawable/ic_slack_logo" />
+
+                <!-- 여기 slack github 로고 수정 -->
+                <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

@@ -1,5 +1,6 @@
 package com.example.seminar_assignment_2025
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -29,6 +30,17 @@ class MainActivity : AppCompatActivity() {
         // 1. XML에 있던 EditText와 Button을 코드로 가져옵니다.
         val workspaceUrlInput = findViewById<EditText>(R.id.workspace_url_input)
         val continueButton = findViewById<Button>(R.id.continue_button)
+
+        continueButton.setOnClickListener {
+            // "계속" 버튼이 클릭되었을 때 실행됩니다.
+
+            // 1. Intent(요청 메시지)를 만듭니다.
+            //    (출발지: this, 도착지: ProfileActivity)
+            val intent = Intent(this, ProfileActivity::class.java)
+
+            // 2. 만든 Intent를 시스템에 전달하여 새로운 액티비티를 시작합니다.
+            startActivity(intent)
+        }
 
         // 2. EditText에 '글자 감시자'를 붙여줍니다.
         workspaceUrlInput.addTextChangedListener(object : TextWatcher {

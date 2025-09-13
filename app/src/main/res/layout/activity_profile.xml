@@ -11,9 +11,10 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_profile"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorSurface"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
         app:contentInsetStartWithNavigation="0dp">
+>
 
         <ImageView
             android:id="@+id/toolbar_back_button"
@@ -68,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="홍길동"
+            android:text="권성안"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -117,13 +118,15 @@
                     android:src="@drawable/ic_slack_logo" />
 
                 <!-- 여기 slack github 로고 수정 -->
+
                 <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="JuTaK97"
-                android:textColor="#0000FF"
-                android:textStyle="bold"/>
+                    android:id="@+id/github_id_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="dgddgd314"
+                    android:textColor="#0000FF"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <TextView

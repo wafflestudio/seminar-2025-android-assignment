@@ -113,21 +113,12 @@
                 android:focusable="true"
                 android:background="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_slack_logo" />
-
-                <!-- 여기 slack github 로고 수정 -->
-
-                <TextView
-                    android:id="@+id/github_id_text"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/github_recycler_view"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="dgddgd314"
-                    android:textColor="#0000FF"
-                    android:textStyle="bold"/>
+                    android:layout_marginTop="16dp"/>
+
             </LinearLayout>
 
             <TextView

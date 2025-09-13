@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.net.toUri
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,19 +40,18 @@ class ProfileActivity : AppCompatActivity() {
         // 4. 꺼낸 데이터를 TextView에 텍스트로 설정합니다.
         slackUrlTextView.text = slackUrl
 
-        // 1. ID를 이용해 XML의 TextView를 찾아 변수에 연결합니다.
-        val githubIdText = findViewById<TextView>(R.id.github_id_text)
+        // 1. RecyclerView를 위한 데이터 준비 (ID 10개)
+        val githubIdList = List(10) { "dgddgd314" } // "qdrptd"를 10번 반복하는 리스트 생성
 
-        // 2. TextView에 클릭 리스너를 설정합니다.
-        githubIdText.setOnClickListener {
-            // 3. 웹페이지를 열기 위한 Intent(요청)를 생성합니다.
-            val intent = Intent(
-                Intent.ACTION_VIEW,
-                "https://github.com/dgddgd314".toUri()
-            )
+        // 2. XML에서 RecyclerView 찾기
+        val recyclerView = findViewById<RecyclerView>(R.id.github_recycler_view)
 
-            // 4. 생성한 Intent를 실행합니다.
-            startActivity(intent)
-        }
+        // 3. 어댑터 생성 및 데이터 전달
+        val adapter = GithubIdAdapter(githubIdList)
+
+        // 4. RecyclerView에 어댑터와 레이아웃 매니저 설정
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this) // 아이템을 세로로 나열
+
     }
 }

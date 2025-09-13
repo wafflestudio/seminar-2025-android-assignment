@@ -70,10 +70,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_slack_logo" />
+                    android:src="@drawable/profile_image" />
 
             </androidx.cardview.widget.CardView>
-            <!-- 여기 slack logo 자기 얼굴로 수정 -->
 
             <TextView
             android:layout_width="wrap_content"

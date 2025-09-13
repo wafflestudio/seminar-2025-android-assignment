@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="저는 안드로이드 개발에 큰 흥미를 느끼고 있습니다. 와플스튜디오에서 최고의 안드로이드 개발자가 되기 위해 열정적으로 세미나에 참여하고 싶습니다. 사용자를 위한 편리하고 멋진 앱을 만드는 것이 저의 목표입니다." />
+                android:text="앱 환경 개발이 해보고 싶었습니다! Kotlin을 어느 정도 할 줄 알았기 때문에 부담이 적었습니다. 안드로이드를 특별히 선택한 이유는 일단 제가 안드로이드 기반 사용자이기 때문이고, 들려오는 소문으로는 클라이언트 쪽 인력이 많이 부족하다고 들어서입니다! 두 번째로는 수업을 진행하는 시간때가 좋아서입니다! 그리고 가르치는 멘토 분도 대단한 실력자라고 들어서 그 분에게 배우고 싶었습니다! 앞으로 열심히 하겠습니다~" />
 
             <LinearLayout
                 android:id="@+id/github_section"

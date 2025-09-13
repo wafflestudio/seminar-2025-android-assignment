@@ -16,6 +16,18 @@ class ProfileActivity : AppCompatActivity() {
         // enableEdgeToEdge()
         setContentView(R.layout.activity_profile)
 
+        // 1. XML에 있는 TextView를 ID로 찾아 변수에 연결합니다.
+        val slackUrlTextView = findViewById<TextView>(R.id.slack_url_text)
+
+        // 2. MainActivity가 보낸 Intent(소포)를 받습니다.
+        val receivedIntent = intent
+
+        // 3. 소포에서 "EXTRA_SLACK_URL" 이름표로 데이터를 꺼냅니다.
+        val slackUrl = receivedIntent.getStringExtra(MainActivity.EXTRA_SLACK_URL)
+
+        // 4. 꺼낸 데이터를 TextView에 텍스트로 설정합니다.
+        slackUrlTextView.text = slackUrl
+
         // 1. ID를 이용해 XML의 TextView를 찾아 변수에 연결합니다.
         val githubIdText = findViewById<TextView>(R.id.github_id_text)
 

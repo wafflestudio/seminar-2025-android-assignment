@@ -23,6 +23,10 @@ import com.example.seminar_assignment_2025.ui.theme.Seminarassignment2025Theme
 
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val EXTRA_SLACK_URL = "EXTRA_SLACK_URL"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,13 +38,16 @@ class MainActivity : AppCompatActivity() {
         continueButton.setOnClickListener {
             // "계속" 버튼이 클릭되었을 때 실행됩니다.
 
-            // 1. Intent(요청 메시지)를 만듭니다.
-            //    (출발지: this, 도착지: ProfileActivity)
-            val intent = Intent(this, ProfileActivity::class.java)
+            continueButton.setOnClickListener {
+                // 1. ProfileActivity로 가는 Intent(소포)를 만듭니다.
+                val intent = Intent(this, ProfileActivity::class.java)
 
-            // 2. 만든 Intent를 시스템에 전달하여 새로운 액티비티를 시작합니다.
-            startActivity(intent)
-        }
+                // 2. 소포에 "EXTRA_SLACK_URL"이라는 이름표로 URL 텍스트를 담습니다.
+                intent.putExtra(EXTRA_SLACK_URL, workspaceUrlInput.text.toString())
+
+                // 3. 소포를 보내 액티비티를 시작합니다.
+                startActivity(intent)
+            }
 
         // 2. EditText에 '글자 감시자'를 붙여줍니다.
         workspaceUrlInput.addTextChangedListener(object : TextWatcher {

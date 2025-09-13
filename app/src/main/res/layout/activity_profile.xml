@@ -56,19 +56,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="16dp"
             android:paddingBottom="32dp">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_slack_logo" />
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/logo_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_slack_logo" />
+
+            </androidx.cardview.widget.CardView>
             <!-- 여기 slack logo 자기 얼굴로 수정 -->
 
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="권성안"
             android:textSize="24sp"
@@ -77,9 +86,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="Wafflestudio Android Seminar"
+                android:text="23.5기 / afflestudio Android Seminar"
                 android:textColor="@android:color/darker_gray" />
 
             <View

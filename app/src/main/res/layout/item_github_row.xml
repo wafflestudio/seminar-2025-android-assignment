@@ -13,7 +13,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_slack_logo" />
+        android:src="@drawable/github_142_svgrepo_com" />
 
     <!-- 여기 slack logo는 github로 대체 -->
 

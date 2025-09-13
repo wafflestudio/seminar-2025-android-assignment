@@ -3,6 +3,7 @@ package com.example.seminar_assignment_2025
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,15 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // enableEdgeToEdge()
         setContentView(R.layout.activity_profile)
+
+        // 1. ID로 뒤로가기 버튼(ImageView)을 찾습니다.
+        val toolbarBackButton = findViewById<ImageView>(R.id.toolbar_back_button)
+
+        // 2. 버튼에 클릭 리스너를 설정합니다.
+        toolbarBackButton.setOnClickListener {
+            // 3. 클릭 시 finish()를 호출하여 현재 화면을 종료합니다.
+            finish()
+        }
 
         // 1. XML에 있는 TextView를 ID로 찾아 변수에 연결합니다.
         val slackUrlTextView = findViewById<TextView>(R.id.slack_url_text)

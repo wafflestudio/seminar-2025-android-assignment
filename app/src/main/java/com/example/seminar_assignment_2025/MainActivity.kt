@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 // 3. 소포를 보내 액티비티를 시작합니다.
                 startActivity(intent)
             }
+        }
 
         // 2. EditText에 '글자 감시자'를 붙여줍니다.
         workspaceUrlInput.addTextChangedListener(object : TextWatcher {

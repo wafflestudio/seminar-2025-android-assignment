@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_edittext_border.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\edittext_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_slack_logo.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\slack_logo.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_button_border.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\button_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\color_button_text_colors.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\color\\button_text_colors.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\layout_activity_main2.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-47:/layout_activity_main2.xml.flat",
+        "source": "com.example.myapplication.app-main-49:/layout/activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_baseline_chevron_left_24.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\baseline_chevron_left_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_catt.png.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\catt.png"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\layout_fragment_second.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\layout_fragment_first.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\layout\\fragment_first.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-47:\\drawable_kebab.png.flat",
+        "source": "C:\\Users\\신유진\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-49:\\drawable\\kebab.png"
+    }
+]

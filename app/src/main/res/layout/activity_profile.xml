@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- 상단 Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:title="프로필"
+        app:titleTextColor="@android:color/black"
+        android:elevation="4dp" />
+
+    <!-- 본문 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 프로필 이미지 -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/my_profile"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- 이름 -->
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="김철민"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="16dp"/>
+
+            <!-- 나이/플랫폼 -->
+            <TextView
+                android:id="@+id/ageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23.5 / Android"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Slack URL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slack URL"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/slackUrlText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(입력한 Slack URL)"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- 내 소개 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 소개"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- MBTI -->
+            <TextView
+                android:id="@+id/mbtiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MBTI: INFP"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- 사는 곳 -->
+            <TextView
+                android:id="@+id/regionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사는 지역: 서울"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Github ID -->
+            <TextView
+                android:id="@+id/githubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Github ID: rlacjfels110"
+                android:textColor="#2962FF"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- 신청 이유 -->
+            <TextView
+                android:id="@+id/reasonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="신청 이유: 안드로이드 세미나를 수강하고 싶어서 지원했습니다."
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

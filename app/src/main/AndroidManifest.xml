@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Seminarassignment2025">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

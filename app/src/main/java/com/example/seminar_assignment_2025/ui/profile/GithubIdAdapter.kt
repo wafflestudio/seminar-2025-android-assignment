@@ -1,4 +1,4 @@
-package com.example.seminar_assignment_2025
+package com.example.seminar_assignment_2025.ui.profile
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.example.seminar_assignment_2025.R
 
 class GithubIdAdapter(private val githubIds: List<String>) : RecyclerView.Adapter<GithubIdAdapter.ViewHolder>() {
 

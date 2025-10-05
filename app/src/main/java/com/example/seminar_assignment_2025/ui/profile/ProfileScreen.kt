@@ -1,17 +1,15 @@
-package com.example.seminar_assignment_2025
+package com.example.seminar_assignment_2025.ui.profile
 import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.content.ContextCompat.startActivity
-import com.example.seminar_assignment_2025.ProfileActivity.Companion.EXTRA_SLACK_URL
+import com.example.seminar_assignment_2025.R
 
 @Composable
 fun ProfileScreen() {
@@ -37,7 +35,7 @@ fun ProfileScreen() {
                 val intent = Intent(view.context, ProfileActivity::class.java)
 
                 // 2. 소포에 "EXTRA_SLACK_URL"이라는 이름표로 URL 텍스트를 담습니다.
-                intent.putExtra(EXTRA_SLACK_URL, workspaceUrlInput.text.toString())
+                intent.putExtra(ProfileActivity.Companion.EXTRA_SLACK_URL, workspaceUrlInput.text.toString())
 
                 // 3. 소포를 보내 액티비티를 시작합니다.
                 view.context.startActivity(intent)

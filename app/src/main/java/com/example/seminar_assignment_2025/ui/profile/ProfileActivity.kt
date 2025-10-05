@@ -1,17 +1,13 @@
-package com.example.seminar_assignment_2025
+package com.example.seminar_assignment_2025.ui.profile
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.seminar_assignment_2025.ui.profile.GithubIdAdapter
+import com.example.seminar_assignment_2025.R
 
 class ProfileActivity : AppCompatActivity() {
     // companion object를 추가해서 관련된 상수들을 보관합니다.
@@ -40,7 +36,7 @@ class ProfileActivity : AppCompatActivity() {
         val receivedIntent = intent
 
         // 3. 소포에서 "EXTRA_SLACK_URL" 이름표로 데이터를 꺼냅니다.
-        val slackUrl = receivedIntent.getStringExtra(ProfileActivity.EXTRA_SLACK_URL)
+        val slackUrl = receivedIntent.getStringExtra(EXTRA_SLACK_URL)
 
         // 4. 꺼낸 데이터를 TextView에 텍스트로 설정합니다.
         slackUrlTextView.text = slackUrl

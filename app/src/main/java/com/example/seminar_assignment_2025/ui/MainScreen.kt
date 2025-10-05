@@ -1,4 +1,5 @@
 package com.example.seminar_assignment_2025.ui
+import GameScreen
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -40,7 +41,7 @@ fun MainScreenWithNav() {
                 BottomNavItem.Home.route -> PlaceholderScreen("Home")
                 BottomNavItem.Search.route -> PlaceholderScreen("Search")
                 BottomNavItem.App.route -> PlaceholderScreen("App")
-                BottomNavItem.Game.route -> PlaceholderScreen("Game")
+                BottomNavItem.Game.route -> GameScreen()
                 BottomNavItem.Profile.route -> ProfileScreen()
             }
         }

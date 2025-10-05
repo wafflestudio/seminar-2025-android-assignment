@@ -66,4 +66,5 @@ dependencies {
 
     implementation(libs.androidx.cardview)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
 }

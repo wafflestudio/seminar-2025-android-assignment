@@ -14,6 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ProfileActivity : AppCompatActivity() {
+    // companion object를 추가해서 관련된 상수들을 보관합니다.
+    companion object {
+        const val EXTRA_SLACK_URL = "EXTRA_SLACK_URL"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // enableEdgeToEdge()
@@ -35,7 +40,7 @@ class ProfileActivity : AppCompatActivity() {
         val receivedIntent = intent
 
         // 3. 소포에서 "EXTRA_SLACK_URL" 이름표로 데이터를 꺼냅니다.
-        val slackUrl = receivedIntent.getStringExtra(MainActivity.EXTRA_SLACK_URL)
+        val slackUrl = receivedIntent.getStringExtra(ProfileActivity.EXTRA_SLACK_URL)
 
         // 4. 꺼낸 데이터를 TextView에 텍스트로 설정합니다.
         slackUrlTextView.text = slackUrl

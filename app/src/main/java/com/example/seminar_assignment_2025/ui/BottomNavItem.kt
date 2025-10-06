@@ -11,7 +11,7 @@ sealed class BottomNavItem(
 ) {
     object Home : BottomNavItem("Home", Icons.Filled.Home, "home")
     object Search : BottomNavItem("Search", Icons.Filled.Search, "search")
-    object App : BottomNavItem("App", Icons.Filled.Search, "app") // icon 수정 요망
-    object Game : BottomNavItem("Game", Icons.Filled.Search, "game") // icon 수정 요망
+    object App : BottomNavItem("App", Icons.Filled.Check, "app") // icon 수정 요망
+    object Game : BottomNavItem("Game", Icons.Filled.PlayArrow, "game") // icon 수정 요망
     object Profile : BottomNavItem("Profile", Icons.Filled.Person, "profile")
 }

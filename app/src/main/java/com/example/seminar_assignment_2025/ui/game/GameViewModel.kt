@@ -14,15 +14,17 @@ enum class Direction { UP, DOWN, LEFT, RIGHT }
 
 class GameViewModel : ViewModel() {
 
+    // 게임 상태(보드와 점수)를 저장하기 위한 데이터 클래스
+    private data class GameState(val board: List<List<Int>>, val score: Int)
+
     private val _board = MutableStateFlow<List<List<Int>>>(emptyList())
     val board: StateFlow<List<List<Int>>> = _board.asStateFlow()
 
     private val _score = MutableStateFlow(0)
     val score: StateFlow<Int> = _score.asStateFlow()
 
-    // '뒤로가기'를 위한 이전 상태 저장
-    private var previousBoard: List<List<Int>> = emptyList()
-    private var previousScore: Int = 0
+    // '뒤로가기'를 위한 이전 상태들을 저장하는 리스트 (스택처럼 사용)
+    private val history = mutableListOf<GameState>()
 
     // ViewModel이 생성될 때 게임을 초기화
     init {
@@ -34,91 +36,94 @@ class GameViewModel : ViewModel() {
             val initialBoard = List(4) { List(4) { 0 } }
             _board.value = initialBoard
             _score.value = 0
+            history.clear() // 새 게임 시작 시 히스토리 초기화
             // 초기 타일 2개 추가
             addNewTile()
             addNewTile()
-            // 초기 상태를 뒤로가기 상태로 저장
-            previousBoard = _board.value
-            previousScore = _score.value
         }
     }
 
     fun undo() {
-        _board.value = previousBoard
-        _score.value = previousScore
+        // 히스토리에 저장된 상태가 있을 경우에만 실행
+        if (history.isNotEmpty()) {
+            // 가장 마지막에 저장된 상태를 가져오고 리스트에서 제거
+            val previousState = history.removeLast()
+            _board.value = previousState.board
+            _score.value = previousState.score
+        }
     }
 
     fun move(direction: Direction) {
         viewModelScope.launch {
-            // 이동 전 상태를 '뒤로가기' 용으로 저장
-            previousBoard = _board.value
-            previousScore = _score.value
+            val boardBeforeMove = _board.value
+            val scoreBeforeMove = _score.value
 
-            val currentBoard = _board.value
             var moved = false // 유효한 이동이었는지 판별
+            var scoreChange = 0 // 이번 이동으로 얻은 점수
 
             // moveLeft 로직을 기준으로 보드를 회전시켜 다른 방향들을 처리
             val rotatedBoard = when (direction) {
-                Direction.LEFT -> currentBoard
-                Direction.RIGHT -> currentBoard.map { it.reversed() }
-                Direction.UP -> transpose(currentBoard)
-                Direction.DOWN -> transpose(currentBoard).map { it.reversed() }
+                Direction.LEFT -> boardBeforeMove
+                Direction.RIGHT -> boardBeforeMove.map { it.reversed() }
+                Direction.UP -> transpose(boardBeforeMove)
+                Direction.DOWN -> transpose(boardBeforeMove).map { it.reversed() }
             }
 
-            val (newBoard, scoreChange) = rotatedBoard.map { row ->
-                val (newRow, rowMoved) = moveRowLeft(row)
+            // 각 행을 이동시키고, 이동 여부와 점수 변화를 집계
+            val newBoardParts = rotatedBoard.map { row ->
+                val (newRow, rowMoved, rowScoreChange) = moveRowLeft(row)
                 if (rowMoved) moved = true
+                scoreChange += rowScoreChange
                 newRow
-            }.let { board ->
-                val currentScore = board.flatten().sum() // 임시 점수 계산 (실제 합쳐진 점수와 다름)
-                board to currentScore // 실제 점수는 moveRowLeft에서 계산
             }
 
-            val finalBoard = when (direction) {
-                Direction.LEFT -> newBoard
-                Direction.RIGHT -> newBoard.map { it.reversed() }
-                Direction.UP -> transpose(newBoard)
-                Direction.DOWN -> transpose(newBoard.map { it.reversed() })
-            }
-
-            // 보드에 변화가 있었을 경우에만 새 타일 추가
+            // 보드에 변화가 있었을 경우에만 상태 업데이트 및 히스토리 저장
             if (moved) {
+                // 이동 전 상태를 히스토리에 추가
+                history.add(GameState(board = boardBeforeMove, score = scoreBeforeMove))
+
+                // 회전했던 보드를 다시 원래 방향으로 복구
+                val finalBoard = when (direction) {
+                    Direction.LEFT -> newBoardParts
+                    Direction.RIGHT -> newBoardParts.map { it.reversed() }
+                    Direction.UP -> transpose(newBoardParts)
+                    Direction.DOWN -> transpose(newBoardParts.map { it.reversed() })
+                }
+
                 _board.value = finalBoard
+                _score.update { it + scoreChange } // 얻은 점수만큼만 더함
                 addNewTile()
             }
         }
     }
 
     // 한 줄을 왼쪽으로 밀고 합치는 로직
-    private fun moveRowLeft(row: List<Int>): Pair<List<Int>, Boolean> {
+    // Pair 대신 3개의 값을 반환하는 Triple 사용 (새로운 행, 이동 여부, 점수 변화량)
+    private fun moveRowLeft(row: List<Int>): Triple<List<Int>, Boolean, Int> {
         val filtered = row.filter { it != 0 }
         val newRow = mutableListOf<Int>()
         var i = 0
-        var moved = false
+        var scoreChange = 0
 
         while (i < filtered.size) {
             if (i + 1 < filtered.size && filtered[i] == filtered[i+1]) {
                 val mergedValue = filtered[i] * 2
                 newRow.add(mergedValue)
-                _score.update { it + mergedValue } // 점수 업데이트
+                scoreChange += mergedValue // 점수 변화량 계산
                 i += 2
-                moved = true
             } else {
                 newRow.add(filtered[i])
                 i += 1
             }
         }
 
-        // 원본과 비교하여 이동 여부 확인
-        if (!moved) {
-            moved = row != (newRow + List(4 - newRow.size) { 0 })
-        }
+        // 나머지 공간을 0으로 채운 최종 행
+        val finalRow = (newRow + List(4 - newRow.size) { 0 })
 
-        // 나머지 공간을 0으로 채움
-        while (newRow.size < 4) {
-            newRow.add(0)
-        }
-        return newRow to moved
+        // 원본과 비교하여 실제로 타일의 위치나 값이 변했는지 확인
+        val moved = row != finalRow
+
+        return Triple(finalRow, moved, scoreChange)
     }
 
     // 보드의 빈 칸에 2 또는 4를 추가
@@ -135,8 +140,8 @@ class GameViewModel : ViewModel() {
         if (emptyCells.isNotEmpty()) {
             val (row, col) = emptyCells.random()
             val newBoard = _board.value.map { it.toMutableList() }.toMutableList()
-            // 0.8 확률로 2, 0.2 확률로 4
-            newBoard[row][col] = if (Random.nextFloat() < 0.8) 2 else 4
+            // 0.9 확률로 2, 0.1 확률로 4 (원래 게임 규칙에 더 가깝게)
+            newBoard[row][col] = if (Random.nextFloat() < 0.9) 2 else 4
             _board.value = newBoard.map { it.toList() }
         }
     }

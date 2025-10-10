@@ -4,6 +4,8 @@ import android.os.Bundle
 import com.example.assignment2.GameScreen
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import android.widget.FrameLayout
+import android.view.LayoutInflater
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
@@ -38,6 +40,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import com.example.assignment2.ui.theme.Assignment2Theme
 import androidx.customview.widget.ExploreByTouchHelper.INVALID_ID
+import android.view.View
 
 // 1. 네비게이션 아이템 데이터 클래스 정의
 data class BottomNavItem(
@@ -147,20 +150,19 @@ fun AppScreen() {
 }
 
 
+// MainActivity.kt
+
+
 @Composable
 fun ProfileScreen() {
-    // 5. Compose에서 XML 뷰를 로드
-    // AndroidView를 사용하여 기존 XML 레이아웃을 표시합니다.
-    // 'R.layout.profile_view' 부분은 실제 프로젝트의 XML 파일명으로 변경해야 합니다.
-    AndroidView(
-        modifier = Modifier.fillMaxSize(),
+    AndroidView(        modifier = Modifier.fillMaxSize(),
         factory = { context ->
-            // XML 레이아웃을 inflate 합니다.
-            android.view.View.inflate(context, R.layout.profile_activity, null)
+            // LayoutInflater를 사용한 표준적인 inflate 방식
+            LayoutInflater.from(context).inflate(R.layout.profile_activity, null)
         },
-        update = { view ->
-            // XML 뷰의 내용을 업데이트해야 할 때 호출됩니다.
-            // 예를 들어, 뷰 내부의 TextView 텍스트를 변경할 수 있습니다.
-        }
+        update = { /* 뷰 업데이트 로직 */ }
     )
 }
+
+
+

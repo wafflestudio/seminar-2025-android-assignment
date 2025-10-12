@@ -68,7 +68,7 @@ fun GameScreen(modifier: Modifier = Modifier, viewModel: GameViewmodel = viewMod
         ) {
             Text("Score: ${viewModel.score}", fontSize = 20.sp)
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Button(onClick = { }) { Text("Undo") }
+                Button(onClick = {viewModel.undo()}) { Text("Undo") }
                 Button(onClick = {viewModel.resetGame()}) { Text("Reset") }
             }
         }

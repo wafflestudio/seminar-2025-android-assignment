@@ -12,8 +12,9 @@ class GameViewmodel : ViewModel() {
         private set
     var score by mutableStateOf(0)
         private set
-    private val history = mutableListOf<Pair<Array<IntArray>, Int>>()
-
+    private val boardHistory = mutableListOf<Array<IntArray>>()
+    private val scoreHistory = mutableListOf<Int>()
+    
     init {
         resetGame()
     }
@@ -36,6 +37,8 @@ class GameViewmodel : ViewModel() {
     }
 
     fun move(direction: Direction) {
+        boardHistory.add(deepCopy(board))
+        scoreHistory.add(score)
         val newBoard = when (direction) {
             Direction.LEFT  -> moveLeft(board)
             Direction.RIGHT -> moveRight(board)
@@ -48,6 +51,8 @@ class GameViewmodel : ViewModel() {
             addRandomTile()
         }
     }
+    private fun deepCopy(arr: Array<IntArray>): Array<IntArray> =
+        Array(4) { i -> arr[i].clone() }
 
     private fun mergeRowLeft(row: IntArray): IntArray {
         val result = IntArray(4)
@@ -95,4 +100,11 @@ class GameViewmodel : ViewModel() {
 
     private fun transpose(matrix: Array<IntArray>): Array<IntArray> =
         Array(4) { i -> IntArray(4) { j -> matrix[j][i] } }
+
+    fun undo() {
+        if (boardHistory.isNotEmpty() && scoreHistory.isNotEmpty()) {
+            board = boardHistory.removeLast()
+            score = scoreHistory.removeLast()
+        }
+    }
 }

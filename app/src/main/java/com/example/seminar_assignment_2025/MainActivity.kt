@@ -1,66 +1,133 @@
 package com.example.seminar_assignment_2025
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.view.LayoutInflater
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.SizeTransform
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Apps
+import androidx.compose.material.icons.filled.Gamepad
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.test.isEnabled
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.seminar_assignment_2025.ui.theme.Seminarassignment2025Theme
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.viewinterop.AndroidView
+import com.example.seminar_assignment_2025.game.Game2048Screen
 
+sealed class Tab(val title: String) {
+    data object Home : Tab("Home")
+    data object Search : Tab("Search")
+    data object AppTab : Tab("App")
+    data object Game : Tab("Game")
+    data object Profile : Tab("Profile")
+}
 
-class MainActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_SLACK_URL = "EXTRA_SLACK_URL"
-    }
-
+class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalAnimationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            val tabs = listOf(Tab.Home, Tab.Search, Tab.AppTab, Tab.Game, Tab.Profile)
+            var currentIndex by remember { mutableStateOf(0) }
+            var previousIndex by remember { mutableStateOf(0) }
 
-        // 1. XML에 있던 EditText와 Button을 코드로 가져옵니다.
-        val workspaceUrlInput = findViewById<EditText>(R.id.workspace_url_input)
-        val continueButton = findViewById<Button>(R.id.continue_button)
+            Scaffold(
+                bottomBar = {
+                    NavigationBar {
+                        tabs.forEachIndexed { index, tab ->
+                            NavigationBarItem(
+                                selected = currentIndex == index,
+                                onClick = {
+                                    previousIndex = currentIndex
+                                    currentIndex = index
+                                },
+                                icon = {
+                                    Icon(
+                                        imageVector = when (tab) {
+                                            Tab.Home -> Icons.Default.Home
+                                            Tab.Search -> Icons.Default.Search
+                                            Tab.AppTab -> Icons.Default.Apps
+                                            Tab.Game -> Icons.Default.Gamepad
+                                            Tab.Profile -> Icons.Default.AccountCircle
+                                        },
+                                        contentDescription = tab.title
+                                    )
+                                },
+                                label = { Text(tab.title) }
+                            )
+                        }
+                    }
+                }
+            ) { innerPadding ->
+                // 선택 구현: 애니메이션 (이전 인덱스 vs 현재 인덱스 비교로 방향 결정)
+                val isForward = currentIndex > previousIndex
+                val duration = 220
 
-        continueButton.setOnClickListener {
-            // "계속" 버튼이 클릭되었을 때 실행됩니다.
-
-            continueButton.setOnClickListener {
-                // 1. ProfileActivity로 가는 Intent(소포)를 만듭니다.
-                val intent = Intent(this, ProfileActivity::class.java)
-
-                // 2. 소포에 "EXTRA_SLACK_URL"이라는 이름표로 URL 텍스트를 담습니다.
-                intent.putExtra(EXTRA_SLACK_URL, workspaceUrlInput.text.toString())
-
-                // 3. 소포를 보내 액티비티를 시작합니다.
-                startActivity(intent)
+                AnimatedContent(
+                    targetState = currentIndex,
+                    transitionSpec = {
+                        val slideIn = slideInHorizontally(
+                            animationSpec = tween(duration),
+                            initialOffsetX = { if (isForward) it else -it }
+                        ) + fadeIn(tween(duration))
+                        val slideOut = slideOutHorizontally(
+                            animationSpec = tween(duration),
+                            targetOffsetX = { if (isForward) -it else it }
+                        ) + fadeOut(tween(duration))
+                        slideIn togetherWith slideOut using SizeTransform(clip = false)
+                    },
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                ) { idx ->
+                    when (tabs[idx]) {
+                        Tab.Home    -> CenterText("Home")
+                        Tab.Search  -> CenterText("Search")
+                        Tab.AppTab  -> CenterText("App")
+                        Tab.Game    -> Game2048Screen()
+                        Tab.Profile -> ProfileXmlHost()
+                    }
+                }
             }
         }
-
-        // 2. EditText에 '글자 감시자'를 붙여줍니다.
-        workspaceUrlInput.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-            // 3. 글자 입력이 끝났을 때 이 부분이 실행됩니다!
-            override fun afterTextChanged(s: Editable?) {
-                // 4. 입력된 글(s)이 비어있지 않으면(!isNullOrEmpty) 버튼을 활성화(true)시킵니다.
-                val inputText = s.toString()
-                continueButton.isEnabled = inputText.endsWith(".slack.com")
-            }
-        })
     }
+}
+
+@Composable
+private fun CenterText(text: String) {
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text(text)
+    }
+}
+
+/** Profile 탭: 지난 과제의 XML을 Compose에서 띄우기 */
+@Composable
+private fun ProfileXmlHost() {
+    val context = LocalContext.current
+    AndroidView(
+        modifier = Modifier.fillMaxSize(),
+        factory = { ctx ->
+            LayoutInflater.from(ctx).inflate(R.layout.activity_profile, null, false)
+        }
+    )
 }

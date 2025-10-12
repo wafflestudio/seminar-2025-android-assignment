@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">seminar-assignment-2025</string>
+    <string name="motivation">저는 웹 개발 경험을 통해 사용자 인터페이스와 데이터 흐름을 다루는 데 익숙해졌지만, 모바일 환경에서의 개발 경험은 부족합니다. 이번 안드로이드 세미나를 통해 웹에서 쌓은 경험을 확장해 앱 UI/UX 구현과 안드로이드 라이프사이클 이해를 배우고, 실제로 동작하는 모바일 앱을 만들어보고 싶어 신청했습니다.</string>
 </resources>

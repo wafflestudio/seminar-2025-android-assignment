@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="권성안"
+                android:text="김철민"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="23.5기 / afflestudio Android Seminar"
+                android:text="23.5기 / wafflestudio Android Seminar"
                 android:textColor="@android:color/darker_gray" />
 
             <Button
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="앱 환경 개발이 해보고 싶었습니다! Kotlin을 어느 정도 할 줄 알았기 때문에 부담이 적었습니다. 안드로이드를 특별히 선택한 이유는 일단 제가 안드로이드 기반 사용자이기 때문이고, 들려오는 소문으로는 클라이언트 쪽 인력이 많이 부족하다고 들어서입니다! 두 번째로는 수업을 진행하는 시간때가 좋아서입니다! 그리고 가르치는 멘토 분도 대단한 실력자라고 들어서 그 분에게 배우고 싶었습니다! 앞으로 열심히 하겠습니다~" />
+                android:text="솔직히 spring,fastAPI를 떨어져서 여기로 오게 되긴 했습니다. 하지만 평소에 앱 개발에 관심있었으며 세미나 시간대도 좋아 Android에 배정받게 되어 오히려 좋았습니다. 앞으로 잘 부탁드리겠습니다! " />
 
             <LinearLayout
                 android:id="@+id/github_section"
@@ -181,7 +181,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="산업공학과" />
+                android:text="컴퓨터공학부" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -197,7 +197,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="2024-12551" />
+                android:text="2022-10204" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="INTJ" />
+                android:text="ISTP" />
 
         </LinearLayout>
     </ScrollView>

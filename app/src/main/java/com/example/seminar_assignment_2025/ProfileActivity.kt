@@ -41,7 +41,7 @@ class ProfileActivity : AppCompatActivity() {
         slackUrlTextView.text = slackUrl
 
         // 1. RecyclerView를 위한 데이터 준비 (ID 10개)
-        val githubIdList = List(10) { "dgddgd314" } // "qdrptd"를 10번 반복하는 리스트 생성
+        val githubIdList = List(10) { "rlacjfals110" } // "rlacjfals110"를 10번 반복하는 리스트 생성
 
         // 2. XML에서 RecyclerView 찾기
         val recyclerView = findViewById<RecyclerView>(R.id.github_recycler_view)

@@ -35,11 +35,11 @@ class ProfileActivity : AppCompatActivity() {
         val receivedIntent = intent
 
         // 3. 소포에서 "EXTRA_SLACK_URL" 이름표로 데이터를 꺼냅니다.
-        val slackUrl = receivedIntent.getStringExtra(MainActivity.EXTRA_SLACK_URL)
+//        val slackUrl = receivedIntent.getStringExtra(MainActivity.EXTRA_SLACK_URL)
 
         // 4. 꺼낸 데이터를 TextView에 텍스트로 설정합니다.
-        slackUrlTextView.text = slackUrl
-
+//        slackUrlTextView.text = slackUrl
+        slackUrlTextView.text = "GG"
         // 1. RecyclerView를 위한 데이터 준비 (ID 10개)
         val githubIdList = List(10) { "dgddgd314" } // "qdrptd"를 10번 반복하는 리스트 생성
 

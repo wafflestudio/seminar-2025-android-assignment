@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.seminar_assignment_2025.ui.GameScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -73,7 +74,41 @@ fun NavGenerate() {
         )
     }
 }
-@Composable fun SearchScreen(modifier: Modifier = Modifier) { Text("Search", modifier = modifier) }
-@Composable fun AppScreen(modifier: Modifier = Modifier) { Text("App", modifier = modifier) }
-@Composable fun GameScreen(modifier: Modifier = Modifier) { Text("Game", modifier = modifier) }
-@Composable fun ProfileScreen(modifier: Modifier = Modifier) { Text("Profile", modifier = modifier) }
+@Composable fun SearchScreen(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            "Search",
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
+@Composable fun AppScreen(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            "App",
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
+@Composable fun ProfileScreen(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            "Profile",
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}

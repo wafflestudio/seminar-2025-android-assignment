@@ -1,4 +1,4 @@
-package com.example.seminar_assignment_2025.data
+package com.example.seminar_assignment_2025.data.repository
 
 import android.content.Context
 import androidx.datastore.core.DataStore

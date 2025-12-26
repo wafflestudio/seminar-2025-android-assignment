@@ -1,10 +1,9 @@
-package com.example.seminar_assignment_2025.game
+package com.example.seminar_assignment_2025.views.game
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.seminar_assignment_2025.ui.Direction
 import kotlin.random.Random
 
 class GameViewmodel : ViewModel() {
